@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meu Site Completo</title>
+<style>
+:root {
+    --cor-primaria: #007bff;
+    --cor-escura: #343a40;
+    --cor-clara: #f8f9fa;
+    --cor-branca: #ffffff;
+    --cor-texto: #333;
+}
+html { scroll-behavior: smooth; }
+body { font-family: Arial, sans-serif; margin: 0; line-height: 1.6; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.section-title { text-align: center; font-size: 2.2rem; color: var(--cor-escura); margin-bottom: 40px; }
+section { padding: 60px 0; }
+/* HEADER */
+.main-header { background-color: var(--cor-branca); padding: 15px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.8rem; font-weight: bold; color: var(--cor-escura); text-decoration: none; }
+.main-nav ul { margin: 0; padding: 0; list-style: none; display: flex; gap: 25px; }
+.main-nav a { text-decoration: none; color: #555; font-weight: 500; }
+.main-nav a:hover { color: var(--cor-primaria); }
+.menu-toggle { display: none; font-size: 2rem; background: none; border: none; cursor: pointer; }
+@media (max-width: 768px) {
+    .main-nav ul { display: none; flex-direction: column; gap: 15px; background-color: var(--cor-branca); position: absolute; top: 60px; right: 20px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-radius: 8px; }
+    .main-nav ul.active { display: flex; }
+    .menu-toggle { display: block; color: var(--cor-escura); }
+}
+/* HERO */
+.hero-section { background-color: var(--cor-escura); color: var(--cor-branca); min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 40px 20px; }
+.hero-title { font-size: 3rem; margin-bottom: 20px; }
+.hero-subtitle { font-size: 1.25rem; margin-bottom: 40px; }
+.hero-button { background-color: var(--cor-primaria); color: var(--cor-branca); padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+/* GALERIA */
+.gallery-section { background-color: var(--cor-clara); }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.gallery-item { border-radius: 8px; overflow: hidden; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* DEPOIMENTOS */
+.testimonials-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+.testimonial-card { background-color: var(--cor-branca); padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.07); text-align: center; flex: 1 1 300px; max-width: 350px; }
+.testimonial-avatar { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; }
+.testimonial-card blockquote { font-style: italic; color: #6c757d; margin: 0; }
+.testimonial-card cite { display: block; margin-top: 20px; font-weight: bold; font-style: normal; }
+/* CONTATO */
+.contact-section { background-color: var(--cor-clara); }
+.form-container { background-color: var(--cor-branca); padding: 40px; border-radius: 8px; max-width: 500px; margin: 0 auto; }
+.form-group { margin-bottom: 20px; text-align: left; }
+.form-group label { display: block; margin-bottom: 8px; }
+.form-group input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; }
+.submit-button { width: 100%; padding: 15px; background-color: var(--cor-primaria); color: white; border: none; border-radius: 4px; font-size: 1.1rem; cursor: pointer; }
+/* FOOTER */
+.main-footer { text-align: center; padding: 20px; background-color: var(--cor-escura); color: var(--cor-clara); }
+</style>
+</head>
+<body>
+<header class="main-header">
+  <a href="#hero" class="logo">MeuSite</a>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#gallery">Galeria</a></li>
+      <li><a href="#testimonials">Depoimentos</a></li>
+      <li><a href="#contact">Contato</a></li>
+    </ul>
+  </nav>
+  <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+</header>
+<main>
+<section id="hero" class="hero-section">
+  <div class="hero-content">
+    <h1 class="hero-title">Bem-vindo ao Nosso Espaço Criativo</h1>
+    <p class="hero-subtitle">Onde ideias incríveis ganham vida.</p>
+    <a href="#contact" class="hero-button">Entre em Contato</a>
+  </div>
+</section>
+<section id="gallery" class="gallery-section">
+  <div class="container">
+    <h2 class="section-title">Nossa Galeria</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="assets/foto-1.jpg" alt="Descrição 1"></div>
+      <div class="gallery-item"><img src="assets/foto-2.jpg" alt="Descrição 2"></div>
+      <div class="gallery-item"><img src="assets/foto-3.jpg" alt="Descrição 3"></div>
+      <div class="gallery-item"><img src="assets/foto-4.jpg" alt="Descrição 4"></div>
+    </div>
+  </div>
+</section>
+<section id="testimonials" class="testimonials-section">
+  <div class="container">
+    <h2 class="section-title">O Que Dizem Sobre Nós</h2>
+    <div class="testimonials-grid">
+      <article class="testimonial-card">
+        <img src="assets/perfil-1.jpg" alt="Foto de Maria" class="testimonial-avatar">
+        <blockquote>“Trabalho impecável e criativo. Transformaram minha ideia em realidade!”</blockquote>
+        <cite>Maria Silva</cite>
+      </article>
+      <article class="testimonial-card">
+        <img src="assets/perfil-2.jpg" alt="Foto de João" class="testimonial-avatar">
+        <blockquote>“Profissionalismo e entrega no prazo. Superou minhas expectativas.”</blockquote>
+        <cite>João Pereira</cite>
+      </article>
+    </div>
+  </div>
+</section>
+<section id="contact" class="contact-section">
+  <div class="form-container">
+    <h2 class="section-title">Fale Conosco</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="user_name">
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="user_email">
+      </div>
+      <button type="submit" class="submit-button">Enviar</button>
+    </form>
+  </div>
+</section>
+</main>
+<footer class="main-footer">
+  <p>&copy; 2025 MeuSite. Todos os direitos reservados.</p>
+</footer>
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.main-nav ul');
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
+</script>
+</body>
+</html>
